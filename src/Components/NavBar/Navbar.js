@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, AppBar, Toolbar, Typography } from "@material-ui/core";
+import { makeStyles, AppBar, Toolbar, Button } from "@material-ui/core";
 import blueGrey from "@material-ui/core/colors/blueGrey";
 
 import NavbarInteract from "./NavbarInteract";
@@ -7,6 +7,7 @@ import NavbarInteract from "./NavbarInteract";
 const useStyles = makeStyles({
   title: {
     flexGrow: 1,
+    padding: "10px 40px",
   },
   NavPad: {
     padding: "10px 40px",
@@ -21,9 +22,12 @@ const Navbar = () => {
     <div>
       <AppBar position="static" styles={{ backgroundColor: blueGrey[500] }}>
         <Toolbar>
-          <Typography variant="h5" className={classes.title}>
+          {/* <Typography variant="h5" className={classes.title}>
             Nattapon
-          </Typography>
+          </Typography> */}
+          <div className={classes.title}>
+            <Button color="inherit">Nattapon</Button>
+          </div>
           <NavbarInteract />
         </Toolbar>
       </AppBar>

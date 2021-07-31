@@ -1,14 +1,16 @@
 import React from "react";
 import { Button, Menu, MenuItem, makeStyles, Tooltip } from "@material-ui/core";
+
 import AccountTreeOutlinedIcon from "@material-ui/icons/AccountTreeOutlined";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import GitHubIcon from "@material-ui/icons/GitHub";
-
-import { grey } from "@material-ui/core/colors";
+import BookIcon from "@material-ui/icons/Book";
+import FlashOnIcon from "@material-ui/icons/FlashOn";
+import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
 
 const useStyles = makeStyles({
   Pad: {
-    padding: "10px 40px",
+    padding: "10px 30px",
   },
 });
 
@@ -27,8 +29,17 @@ const NavbarInteract = () => {
 
   return (
     <div>
+      {/* Me */}
+      <Button color="inherit" className={classes.Pad}>
+        <FlashOnIcon /> Experiences
+      </Button>
+      <Button color="inherit" className={classes.Pad}>
+        <BookIcon />
+        Education
+      </Button>
+
+      {/* Projects */}
       <Button
-        aria-controls="simple-menu"
         aria-haspopup="true"
         color="inherit"
         className={classes.Pad}
@@ -43,6 +54,16 @@ const NavbarInteract = () => {
         <MenuItem onClick={handleClose}>Chock Chana</MenuItem>
       </Menu>
 
+      {/* Download */}
+      <Tooltip
+        title="Download my resume"
+        placement={window.innerWidth > 959 ? "top" : "left"}
+      >
+        <Button href="" target="_blank" color="inherit">
+          <CloudDownloadIcon />
+        </Button>
+      </Tooltip>
+
       {/* Facebook */}
       <Tooltip
         title="Follow me on Facebook"
@@ -51,8 +72,9 @@ const NavbarInteract = () => {
         <Button
           href="https://www.facebook.com/nattapon.sukthaworn/"
           target="_blank"
+          color="inherit"
         >
-          <FacebookIcon style={{ color: grey[50] }} />
+          <FacebookIcon />
         </Button>
       </Tooltip>
 
@@ -60,9 +82,10 @@ const NavbarInteract = () => {
       <Tooltip
         title="Follow me on Github"
         placement={window.innerWidth > 959 ? "top" : "left"}
+        color="inherit"
       >
         <Button href="https://github.com/Nattapon33998" target="_blank">
-          <GitHubIcon style={{ color: grey[50] }} />
+          <GitHubIcon />
         </Button>
       </Tooltip>
     </div>
