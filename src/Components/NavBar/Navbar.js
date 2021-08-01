@@ -3,7 +3,7 @@ import { makeStyles, AppBar, Toolbar, Button } from "@material-ui/core";
 
 import NavbarInteract from "./NavbarInteract";
 
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 
 const useStyles = makeStyles({
   title: {

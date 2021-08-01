@@ -3,9 +3,7 @@ import React, { Component } from "react";
 import Navbar from "./Components/NavBar/Navbar";
 import Main from "./Pages/Main";
 
-import Grid from "@material-ui/core/Grid";
-
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 export default class App extends Component {
   render() {
