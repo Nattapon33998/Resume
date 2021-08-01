@@ -8,6 +8,8 @@ import BookIcon from "@material-ui/icons/Book";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
 import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
 
+import { useHistory } from "react-router-dom";
+
 const useStyles = makeStyles({
   Pad: {
     padding: "10px 30px",
@@ -23,17 +25,31 @@ const NavbarInteract = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (pathName) => {
     setAnchorEl(null);
+    history.push(pathName);
   };
+
+  const history = useHistory();
 
   return (
     <div>
-      {/* Me */}
-      <Button color="inherit" className={classes.Pad}>
+      {/* Experience */}
+      <Button
+        color="inherit"
+        className={classes.Pad}
+        onClick={() => history.push("/experience")}
+      >
         <FlashOnIcon /> Experiences
       </Button>
-      <Button color="inherit" className={classes.Pad}>
+      {/* </NavLink> */}
+
+      {/* Education */}
+      <Button
+        color="inherit"
+        className={classes.Pad}
+        onClick={() => history.push("/education")}
+      >
         <BookIcon />
         Education
       </Button>
@@ -48,21 +64,15 @@ const NavbarInteract = () => {
         {<AccountTreeOutlinedIcon />}Projects
       </Button>
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-        <MenuItem onClick={handleClose}>Wonder Bounding Land</MenuItem>
-        <MenuItem onClick={handleClose}>Pirate of Digestive Island</MenuItem>
-        <MenuItem onClick={handleClose}>School Route</MenuItem>
-        <MenuItem onClick={handleClose}>Chock Chana</MenuItem>
+        <MenuItem onClick={() => handleClose("/wonder")}>
+          Wonder Bounding Land
+        </MenuItem>
+        <MenuItem onClick={() => handleClose("/Pirate")}>
+          Pirate of Digestive Island
+        </MenuItem>
+        <MenuItem onClick={() => handleClose("/school")}>School Route</MenuItem>
+        <MenuItem onClick={() => handleClose("/chock")}>Chock Chana</MenuItem>
       </Menu>
-
-      {/* Download */}
-      <Tooltip
-        title="Download my resume"
-        placement={window.innerWidth > 959 ? "top" : "left"}
-      >
-        <Button href="" target="_blank" color="inherit">
-          <CloudDownloadIcon />
-        </Button>
-      </Tooltip>
 
       {/* Facebook */}
       <Tooltip
@@ -86,6 +96,16 @@ const NavbarInteract = () => {
       >
         <Button href="https://github.com/Nattapon33998" target="_blank">
           <GitHubIcon />
+        </Button>
+      </Tooltip>
+
+      {/* Download */}
+      <Tooltip
+        title="Download my resume"
+        placement={window.innerWidth > 959 ? "top" : "left"}
+      >
+        <Button href="" target="_blank" color="inherit">
+          <CloudDownloadIcon />
         </Button>
       </Tooltip>
     </div>
