@@ -1,12 +1,18 @@
 import React from "react";
 import bg from "../images/bg.svg";
-import { makeStyles, Container, Grid } from "@material-ui/core";
+import { makeStyles, Container, Grid, Paper } from "@material-ui/core";
+
+import MyCard from "../Components/Menu/MyCard";
 
 const useStyles = makeStyles({
   mainBg: {
-    // width: "100%",
     backgroundSize: "cover",
+  },
+  front: {
+    background: "#add",
     position: "relative",
+    zIndex: "3",
+    // margin: "-60px 300px 0px",
   },
 });
 
@@ -16,11 +22,17 @@ const Main = () => {
     <div>
       <div>
         <img src={bg} className={classes.mainBg} />
-        <h1 styles={{ position: "absolute" }}>Hiii</h1>
+        {/* <h1>1</h1> */}
+        <div className={classes.front}>
+          <h1>Hiii</h1>
+        </div>
       </div>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <Grid container>
-          <Grid item></Grid>
+          <Grid item>
+            {/* <MyCard />
+            <MyCard /> */}
+          </Grid>
         </Grid>
       </Container>
     </div>
