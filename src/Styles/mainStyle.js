@@ -10,6 +10,13 @@ const mainStyle = {
     borderRadius: "6px",
     boxShadow: "0 16px 24px 2px rgba(0, 0, 0, 0.14)",
   },
+  textOnBg: {
+    position: "relative",
+    zIndex: "5",
+    margin: "-100px 30px 0px",
+    // borderRadius: "6px",
+    // boxShadow: "0 16px 24px 2px rgba(0, 0, 0, 0.14)",
+  },
   imgFluid: {
     maxWidth: "100%",
     height: "auto",

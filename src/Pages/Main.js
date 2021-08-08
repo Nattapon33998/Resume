@@ -22,6 +22,9 @@ const Main = () => {
     <div>
       <div>
         <img src={bg} className={classes.mainBg} />
+        {/* <div className={classes.textOnBg}>
+          <h1 justify="center">Nattapon</h1>
+        </div> */}
         <div className={classes.cover}>
           <Grid container justifyContent="center">
             <Grid item>
