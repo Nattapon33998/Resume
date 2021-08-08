@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Navbar from "./Components/NavBar/Navbar";
+import Footer from "./Components/Footer";
 import Main from "./Pages/Main";
 
 import { Switch, Route } from "react-router-dom";
@@ -46,12 +47,7 @@ export default class App extends Component {
           </Route>
         </Switch>
 
-        {/* <Grid container>
-          <Grid item xs={12}>
-            <Main />
-          </Grid>
-          <Grid item xs={6}></Grid>
-        </Grid> */}
+        <Footer />
       </div>
     );
   }

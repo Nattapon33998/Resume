@@ -43,6 +43,7 @@ const Main = () => {
               and records all of his own music, giving it a warm, intimate feel
               with a solid groove structure.{" "}
             </p>
+            <MyCard />
           </div>
         </div>
       </div>
