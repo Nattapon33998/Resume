@@ -9,7 +9,12 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar
+          changeColorOnScroll={{
+            height: 200,
+            color: "white",
+          }}
+        />
 
         <Switch>
           <Route exact path="/">
